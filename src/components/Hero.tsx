@@ -179,7 +179,7 @@ export const Hero = () => {
             {Array(8)
               .fill(null)
               .map((_, i) => (
-                <div key={i} className="flex items-center gap-6 text-sm font-medium whitespace-nowrap px-4">
+                <div key={i} className="flex items-center gap-8 text-sm font-medium whitespace-nowrap px-1">
                   <span className="text-foreground">{personalInfo.name}</span>
                   <span className="text-primary">✦</span>
                   <span className="text-muted-foreground">{personalInfo.title}</span>
@@ -191,7 +191,7 @@ export const Hero = () => {
             {Array(8)
               .fill(null)
               .map((_, i) => (
-                <div key={i} className="flex items-center gap-6 text-sm font-medium whitespace-nowrap px-4">
+                <div key={i} className="flex items-center gap-8 text-sm font-medium whitespace-nowrap px-1">
                   <span className="text-foreground">{personalInfo.name}</span>
                   <span className="text-primary">✦</span>
                   <span className="text-muted-foreground">{personalInfo.title}</span>
