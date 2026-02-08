@@ -1,73 +1,141 @@
-# Welcome to your Lovable project
+# 🚀 Personal Portfolio Website
 
-## Project info
+A modern, fast, and responsive personal portfolio built with **React, TypeScript, Vite, and Tailwind CSS**.  
+This project is designed to showcase projects, skills, and experience with a clean UI and optimized performance.
 
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+🔗 **Live Website:** https://your-site-name.netlify.app  
+_(Replace this with your Netlify deployment URL)_
 
-## How can I edit this code?
+---
 
-There are several ways of editing your application.
+## 🛠️ Tech Stack
 
-**Use Lovable**
+- **React**
+- **TypeScript**
+- **Vite**
+- **Tailwind CSS**
+- **JavaScript / ES6+**
+- **Netlify** (Deployment)
+- **Bun / npm** (Package manager)
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
+---
 
-Changes made via Lovable will be committed automatically to this repo.
+## ✨ Features
 
-**Use your preferred IDE**
+- Fully responsive design
+- Component-based architecture
+- Clean and scalable folder structure
+- Fast development and build using Vite
+- Tailwind CSS for modern UI styling
+- Contact form integration ready
+- Easy deployment on Netlify
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+---
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+## 📁 Project Structure
 
-Follow these steps:
+```
+my-portfolio
+├── public
+├── src
+│   ├── assets        # Images, icons, media
+│   ├── components    # Reusable UI components
+│   ├── data          # Static data (projects, skills, etc.)
+│   ├── hooks         # Custom React hooks
+│   ├── lib           # Utility/helper functions
+│   ├── pages         # Application pages
+│   ├── test          # Test files
+│   ├── App.tsx
+│   ├── main.tsx
+│   ├── App.css
+│   └── index.css
+├── index.html
+├── vite-env.d.ts
+├── vite.config.ts
+├── components.json
+├── .gitignore
+├── bun.lockb
+├── package.json
+└── README.md
+```
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+---
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+## ⚙️ Getting Started (Run Locally)
 
-# Step 3: Install the necessary dependencies.
-npm i
+### Prerequisites
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+- Node.js (v16+)
+- npm or bun
+
+### Installation
+
+```bash
+git clone https://github.com/Akshat10295/my-portfolio.git
+cd my-portfolio
+npm install
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+OR using **bun**:
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+```bash
+bun install
+bun dev
+```
 
-**Use GitHub Codespaces**
+Open your browser and visit:
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+```
+http://localhost:5173
+```
 
-## What technologies are used for this project?
+---
 
-This project is built with:
+## 📦 Build for Production
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+```bash
+npm run build
+```
 
-## How can I deploy this project?
+Preview the production build:
 
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
+```bash
+npm run preview
+```
 
-## Can I connect a custom domain to my Lovable project?
+---
 
-Yes, you can!
+## 🚀 Deployment (Netlify)
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+1. Push your code to GitHub
+2. Import the repository into Netlify
+3. Set **Build Command**:
+   ```
+   npm run build
+   ```
+4. Set **Publish Directory**:
+   ```
+   dist
+   ```
+5. Deploy 🚀
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+---
+
+## 📬 Contact
+
+Feel free to connect or reach out:
+
+- **Email:** your-email@gmail.com  
+- **LinkedIn:** https://www.linkedin.com/in/your-link  
+- **GitHub:** https://github.com/Akshat10295  
+
+---
+
+## 📄 License
+
+This project is open-source and available under the **MIT License**.
+
+---
+
+⭐ If you like this project, consider giving it a star!
