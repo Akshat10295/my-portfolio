@@ -1,20 +1,14 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import { useIsMobile } from "@/hooks/use-mobile";
 
 export const CursorFollower = () => {
-  const isMobile = useIsMobile();
-
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
-    // 🚫 Disable cursor follower on mobile / touch devices
-    if (isMobile) return;
-
     const handleMouseMove = (e: MouseEvent) => {
       setMousePosition({ x: e.clientX, y: e.clientY });
-      setIsVisible(true);
+      if (!isVisible) setIsVisible(true);
     };
 
     const handleMouseLeave = () => setIsVisible(false);
@@ -29,14 +23,11 @@ export const CursorFollower = () => {
       document.body.removeEventListener("mouseleave", handleMouseLeave);
       document.body.removeEventListener("mouseenter", handleMouseEnter);
     };
-  }, [isMobile]);
-
-  // 🚫 Do not render cursor on mobile
-  if (isMobile) return null;
+  }, [isVisible]);
 
   return (
     <>
-      {/* Outer ring */}
+      {/* Outer ring - follows with delay */}
       <motion.div
         className="fixed pointer-events-none z-[9999] mix-blend-difference"
         animate={{
@@ -46,15 +37,15 @@ export const CursorFollower = () => {
         }}
         transition={{
           type: "spring",
-          stiffness: 120,
-          damping: 18,
-          mass: 0.4,
+          stiffness: 150,
+          damping: 15,
+          mass: 0.5,
         }}
       >
         <div className="w-10 h-10 rounded-full border-2 border-primary/60" />
       </motion.div>
 
-      {/* Inner dot */}
+      {/* Inner dot - follows immediately */}
       <motion.div
         className="fixed pointer-events-none z-[9999]"
         animate={{
@@ -64,8 +55,8 @@ export const CursorFollower = () => {
         }}
         transition={{
           type: "spring",
-          stiffness: 400,
-          damping: 30,
+          stiffness: 500,
+          damping: 28,
         }}
       >
         <div className="w-2 h-2 rounded-full bg-primary" />
