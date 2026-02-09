@@ -8,11 +8,8 @@ export function useIsMobile() {
   React.useEffect(() => {
     const checkDevice = () => {
       const isSmallScreen = window.innerWidth < MOBILE_BREAKPOINT;
-      const isCoarsePointer = window.matchMedia("(pointer: coarse)").matches;
-      const hasMouse = window.matchMedia("(pointer: fine)").matches;
-
-      // ✅ Mobile = small screen AND no fine pointer (mouse)
-      setIsMobile(isSmallScreen && isCoarsePointer && !hasMouse);
+      const isTouchDevice = window.matchMedia("(pointer: coarse)").matches;
+      setIsMobile(isSmallScreen || isTouchDevice);
     };
 
     checkDevice();
