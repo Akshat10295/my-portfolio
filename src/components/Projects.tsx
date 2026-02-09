@@ -35,8 +35,8 @@ export const Projects = () => {
               key={project.title}
               initial={{ opacity: 0, y: 30 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ delay: 0.2 + index * 0.1 }}
-              whileHover={{ scale: 1.03, y: -5, transition: { type: "spring", stiffness: 400, damping: 20 } }}
+              transition={{ delay: 0.1 + index * 0.1 }}
+              whileHover={{ scale: 1.03, y: -5 }}
               className="project-card cursor-pointer"
               onClick={() =>
                 setExpandedProject(expandedProject === index ? null : index)

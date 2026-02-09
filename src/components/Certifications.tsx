@@ -7,6 +7,9 @@ export const Certifications = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
+  // Slower zoom transition settings
+  const slowZoomTransition = { type: "spring" as const, stiffness: 200, damping: 25, duration: 0.6 };
+
   return (
     <section className="py-24 relative" ref={ref}>
       <div className="section-container">
@@ -32,8 +35,9 @@ export const Certifications = () => {
               rel="noopener noreferrer"
               initial={{ opacity: 0, y: 30 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ delay: 0.2 + index * 0.1 }}
-              whileHover={{ scale: 1.05, y: -8, transition: { type: "spring", stiffness: 400, damping: 20 } }}
+              transition={{ delay: 0.1 + index * 0.1 }}
+              // Slower zoom effect
+              whileHover={{ scale: 1.05, y: -8, transition: slowZoomTransition }}
               className="cert-card group cursor-pointer"
             >
               <div className="flex items-center justify-between mb-4">

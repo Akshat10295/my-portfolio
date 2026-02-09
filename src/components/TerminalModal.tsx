@@ -136,7 +136,6 @@ export const TerminalModal = ({ isOpen, onClose }: TerminalModalProps) => {
           {/* Header */}
           <div className="flex items-center justify-between px-4 py-3 border-b border-border bg-card">
             <div className="flex items-center gap-2 font-mono text-sm font-bold text-foreground">
-              <Terminal className="w-4 h-4 text-primary" />
               <span>&gt;_ TERMINAL</span>
             </div>
             <button

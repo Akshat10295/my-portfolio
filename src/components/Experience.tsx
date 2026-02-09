@@ -7,7 +7,10 @@ export const Experience = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
-  return (
+  // Slower zoom transition settings - using 'as const' for type safety
+  const slowZoomTransition = { type: "spring" as const, stiffness: 200, damping: 25, duration: 0.6 };
+
+  return ( 
     <section id="experience" className="py-24 relative" ref={ref}>
       <div className="section-container">
         {/* Section header */}
@@ -27,7 +30,7 @@ export const Experience = () => {
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             animate={isInView ? { opacity: 1, x: 0 } : {}}
-            transition={{ delay: 0.2 }}
+            transition={{ delay: 0.1 }}
           >
             <div className="flex items-center gap-3 mb-8">
               <div className="p-2 rounded-lg bg-primary/10">
@@ -44,12 +47,17 @@ export const Experience = () => {
                   key={exp.title}
                   initial={{ opacity: 0, y: 20 }}
                   animate={isInView ? { opacity: 1, y: 0 } : {}}
-                  transition={{ delay: 0.3 + index * 0.1 }}
+                  transition={{ delay: 0.1 + index * 0.1 }}
                   className="relative pb-8 last:pb-0"
                 >
                   <div className="timeline-dot top-1" />
 
-                  <motion.div whileHover={{ scale: 1.03, y: -4 }} transition={{ type: "spring", stiffness: 400, damping: 20 }} className="card-glass card-hover p-6 ml-4">
+                  {/* Slower zoom effect */}
+                  <motion.div 
+                    whileHover={{ scale: 1.03, y: -4 }} 
+                    transition={slowZoomTransition} 
+                    className="card-glass card-hover p-6 ml-4"
+                  >
                     <div className="flex flex-wrap items-start justify-between gap-2 mb-2">
                       <h4 className="font-semibold text-foreground">{exp.title}</h4>
                       <span className="text-xs font-mono text-primary bg-primary/10 px-2 py-1 rounded">
@@ -87,7 +95,7 @@ export const Experience = () => {
           <motion.div
             initial={{ opacity: 0, x: 30 }}
             animate={isInView ? { opacity: 1, x: 0 } : {}}
-            transition={{ delay: 0.2 }}
+            transition={{ delay: 0.1 }}
           >
             <div className="flex items-center gap-3 mb-8">
               <div className="p-2 rounded-lg bg-primary/10">
@@ -104,12 +112,17 @@ export const Experience = () => {
                   key={edu.degree}
                   initial={{ opacity: 0, y: 20 }}
                   animate={isInView ? { opacity: 1, y: 0 } : {}}
-                  transition={{ delay: 0.4 + index * 0.1 }}
+                  transition={{ delay: 0.1 + index * 0.1 }}
                   className="relative pb-8 last:pb-0"
                 >
                   <div className="timeline-dot top-1" />
 
-                  <motion.div whileHover={{ scale: 1.03, y: -4 }} transition={{ type: "spring", stiffness: 400, damping: 20 }} className="card-glass card-hover p-6 ml-4">
+                  {/* Slower zoom effect */}
+                  <motion.div 
+                    whileHover={{ scale: 1.03, y: -4 }} 
+                    transition={slowZoomTransition} 
+                    className="card-glass card-hover p-6 ml-4"
+                  >
                     <div className="flex flex-wrap items-start justify-between gap-2 mb-2">
                       <h4 className="font-semibold text-foreground text-sm">
                         {edu.degree}

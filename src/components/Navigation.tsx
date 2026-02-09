@@ -62,10 +62,14 @@ export const Navigation = ({ isDark, toggleTheme }: NavigationProps) => {
         <div className="section-container">
           <div className="flex items-center justify-between h-16">
             {/* Logo */}
-            <a href="#" className="text-xl font-bold text-primary">
-              {personalInfo.initials}
+            <span>
+            <a href="#" className="text-xl font-bold text-foreground">
+              {personalInfo.finitial}
             </a>
-
+            <a href="#" className="text-xl font-bold text-primary">
+              {personalInfo.linitial}
+            </a>
+            </span>
             {/* Desktop Navigation */}
             <div className="hidden md:flex items-center gap-8">
               {navLinks.map((link) => (

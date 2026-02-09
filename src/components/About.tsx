@@ -41,29 +41,7 @@ export const About = () => {
                 />
               </div>
 
-              {/* Wave ripple rings on hover */}
-              {isHovering && (
-                <>
-                  <motion.div
-                    className="absolute rounded-full border-2 border-primary/40"
-                    initial={{ width: 224, height: 224, opacity: 0.6 }}
-                    animate={{ width: 350, height: 350, opacity: 0 }}
-                    transition={{ duration: 1.5, repeat: Infinity, ease: "easeOut" }}
-                  />
-                  <motion.div
-                    className="absolute rounded-full border-2 border-primary/30"
-                    initial={{ width: 224, height: 224, opacity: 0.5 }}
-                    animate={{ width: 400, height: 400, opacity: 0 }}
-                    transition={{ duration: 1.5, repeat: Infinity, ease: "easeOut", delay: 0.4 }}
-                  />
-                  <motion.div
-                    className="absolute rounded-full border border-primary/20"
-                    initial={{ width: 224, height: 224, opacity: 0.4 }}
-                    animate={{ width: 450, height: 450, opacity: 0 }}
-                    transition={{ duration: 1.5, repeat: Infinity, ease: "easeOut", delay: 0.8 }}
-                  />
-                </>
-              )}
+              {/* Wave ripple rings removed - keeping only the glow effect */}
               
               {/* Rotating ring */}
               <motion.div
@@ -73,11 +51,11 @@ export const About = () => {
               />
               <div className="absolute w-64 h-64 lg:w-80 lg:h-80 rounded-full border border-primary/30" />
               
-              {/* Main image - Round */}
+              {/* Main image - Round with slower zoom effect */}
               <motion.div
                 className="relative z-10 w-56 h-56 lg:w-72 lg:h-72 rounded-full overflow-hidden border-4 border-primary/50 shadow-2xl shadow-primary/20"
                 whileHover={{ scale: 1.05 }}
-                transition={{ type: "spring", stiffness: 300, damping: 15 }}
+                transition={{ type: "spring", stiffness: 200, damping: 20, duration: 0.6 }}
               >
                 <img
                   src={akshatPhoto}
@@ -112,16 +90,17 @@ export const About = () => {
               <p>{aboutInfo.passion}</p>
             </div>
 
-            {/* Stats grid */}
+            {/* Stats grid - slower zoom effect */}
             <div className="grid grid-cols-2 gap-4">
               {stats.map((stat, index) => (
                 <motion.div
                   key={stat.label}
                   initial={{ opacity: 0, y: 20 }}
                   animate={isInView ? { opacity: 1, y: 0 } : {}}
-                  transition={{ duration: 0.4, delay: 0.4 + index * 0.1 }}
+                  transition={{ duration: 0.4, delay: 0.1 + index * 0.1 }}
                   whileHover={{ scale: 1.05, y: -5 }}
-                  className="p-4 rounded-xl border border-border bg-card/50 cursor-pointer transition-shadow duration-200 hover:border-primary/50 hover:shadow-lg hover:shadow-primary/10"
+                  // Slower zoom transition
+                  className="p-4 rounded-xl border border-border bg-card/50 cursor-pointer transition-shadow duration-500 hover:border-primary/50 hover:shadow-lg hover:shadow-primary/10"
                 >
                   <p className="text-xs text-muted-foreground font-medium uppercase tracking-wider mb-1">
                     {stat.label}

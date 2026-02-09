@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Github, Linkedin, Mail, Download, ChevronDown, Code } from "lucide-react";
 import { personalInfo } from "@/data/portfolio";
-import akshatPhoto from "@/assets/akshat-photo.jpg";
+import resume from "../assets/Akshat-Resume.pdf";
 
 export const Hero = () => {
   const [currentRoleIndex, setCurrentRoleIndex] = useState(0);
@@ -108,7 +108,7 @@ export const Hero = () => {
             Get In Touch
           </a>
           <a
-            href={personalInfo.resumeUrl}
+            href={resume}
             target="_blank"
             rel="noopener noreferrer"
             className="btn-outline inline-flex items-center gap-2"
@@ -155,9 +155,10 @@ export const Hero = () => {
             <Linkedin className="w-5 h-5" />
           </a>
           <a
-            href={`mailto:${personalInfo.email}`}
-            className="p-3 rounded-full bg-card/50 border border-border hover:border-primary hover:text-primary transition-all duration-300"
-          >
+            href={`https://mail.google.com/mail/?view=cm&fs=1&to=${personalInfo.email}&su=Portfolio%20Inquiry&body=Hi%20Akshat,`}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="p-3 rounded-full bg-card/50 border border-border hover:border-primary hover:text-primary transition-all duration-300">
             <Mail className="w-5 h-5" />
           </a>
           <a
@@ -178,7 +179,7 @@ export const Hero = () => {
             {Array(8)
               .fill(null)
               .map((_, i) => (
-                <div key={i} className="flex items-center gap-6 text-sm font-medium whitespace-nowrap px-4">
+                <div key={i} className="flex items-center gap-8 text-sm font-medium whitespace-nowrap px-1">
                   <span className="text-foreground">{personalInfo.name}</span>
                   <span className="text-primary">✦</span>
                   <span className="text-muted-foreground">{personalInfo.title}</span>
@@ -190,7 +191,7 @@ export const Hero = () => {
             {Array(8)
               .fill(null)
               .map((_, i) => (
-                <div key={i} className="flex items-center gap-6 text-sm font-medium whitespace-nowrap px-4">
+                <div key={i} className="flex items-center gap-8 text-sm font-medium whitespace-nowrap px-1">
                   <span className="text-foreground">{personalInfo.name}</span>
                   <span className="text-primary">✦</span>
                   <span className="text-muted-foreground">{personalInfo.title}</span>
