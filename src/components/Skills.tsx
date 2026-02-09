@@ -152,7 +152,7 @@ export const Skills = () => {
             <div className="absolute w-[450px] h-[450px] rounded-full border border-border/10 hidden md:block" />
 
             {/* Skill nodes */}
-            <AnimatePresence mode="wait">
+            <AnimatePresence mode="sync">
               {allSkills
                 .filter(
                   ({ category }) =>

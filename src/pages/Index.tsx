@@ -71,7 +71,7 @@ const Index = () => {
 
   return (
     <>
-      <AnimatePresence mode="wait">
+      <AnimatePresence mode="sync">
         {isLoading && <LoadingScreen progress={loadingProgress} isDark={isDark} />}
       </AnimatePresence>
 
