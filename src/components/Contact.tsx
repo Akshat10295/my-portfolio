@@ -56,11 +56,17 @@ export const Contact = () => {
 
     try {
       const form = e.currentTarget;
+
       const formDataObj = new FormData(form);
+
+      // 👇 REQUIRED for Netlify
+      formDataObj.append("form-name", "contact");
 
       await fetch("/", {
         method: "POST",
-        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        headers: {
+          "Content-Type": "application/x-www-form-urlencoded",
+        },
         body: new URLSearchParams(formDataObj as any).toString(),
       });
 
@@ -88,6 +94,7 @@ export const Contact = () => {
       setIsSending(false);
     }
   };
+
 
   /* ================= DATA ================= */
   const contactInfo = [
