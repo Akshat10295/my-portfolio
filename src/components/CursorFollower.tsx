@@ -1,7 +1,13 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
+import { useIsMobile } from "@/hooks/use-mobile";
 
 export const CursorFollower = () => {
+  const isMobile = useIsMobile();
+
+  // 🚫 Completely disable on mobile / touch
+  if (isMobile) return null;
+
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [isVisible, setIsVisible] = useState(false);
 
@@ -27,7 +33,7 @@ export const CursorFollower = () => {
 
   return (
     <>
-      {/* Outer ring - follows with delay */}
+      {/* Outer ring */}
       <motion.div
         className="fixed pointer-events-none z-[9999] mix-blend-difference"
         animate={{
@@ -45,7 +51,7 @@ export const CursorFollower = () => {
         <div className="w-10 h-10 rounded-full border-2 border-primary/60" />
       </motion.div>
 
-      {/* Inner dot - follows immediately */}
+      {/* Inner dot */}
       <motion.div
         className="fixed pointer-events-none z-[9999]"
         animate={{
