@@ -18,10 +18,15 @@
   <body>
     <form
       name="contact"
-      netlify
+      method="POST"
+      data-netlify="true"
       netlify-honeypot="bot-field"
       hidden
     >
+      <!-- REQUIRED -->
+      <input type="hidden" name="form-name" value="contact" />
+
+      <!-- Your fields -->
       <input type="text" name="name" />
       <input type="email" name="email" />
       <input type="text" name="subject" />
